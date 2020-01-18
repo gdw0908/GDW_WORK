@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="HomeSql">
+	 <select id="selectList" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		SELECT			
+			CATEGORY_CODE     
+			,CATEGORY_NAME    
+			,CATEGORY_ACRONYM 
+			,USE_FLAG         
+			,REMARK           
+			,REG_USERID       
+			,REG_DTTIME       
+			,MOD_USERID       
+			,MOD_DTTIME    
+		FROM	base_category
+		WHERE	1=1	
+	</select>                                                                                                             
+</mapper>

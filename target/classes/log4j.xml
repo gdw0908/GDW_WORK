@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j:configuration PUBLIC "-//APACHE//DTD LOG4J 1.2//EN" "log4j.dtd">
+<log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
+
+	<!-- Appenders -->
+	<appender name="console" class="org.apache.log4j.ConsoleAppender">
+		<layout class="org.apache.log4j.PatternLayout">
+			<param name="ConversionPattern"
+				value="[%d{yyyy-MM-dd HH:mm:ss,SSS}] %5p [%C{1}(%M:%L)] :%m%n" />
+		</layout>
+	</appender>
+	
+	<!-- log file_log -->
+	<appender name="file_log" class="org.apache.log4j.DailyRollingFileAppender">
+		<param name="File" value="/logs/GDW_LOG/WORK/GDWLog.log" />
+		<param name="Append" value="true" />
+		<param name="DatePattern" value="'.'yyyy-MM-dd" />
+		<layout class="org.apache.log4j.PatternLayout">
+		<!-- 
+			<param name="ConversionPattern"
+				value="[slf5s.start]%d{DATE}[slf5s.DATE]%n %p[slf5s.PRIORITY]%n%x[slf5s.NDC]%n%t[slf5s.THREAD]%n
+   						  %c[slf5s.CATEGORY]%n%l[slf5s.LOCATION]%n%m[slf5s.MESSAGE]%n%n" />
+   						  -->
+		  <param name="ConversionPattern" value="[%d{yyyy-MM-dd HH:mm:ss,SSS}] %5p [%C{1}(%M:%L)] :%m%n" />
+		</layout>
+	</appender>
+	
+	<!-- Application Loggers -->
+	<logger name="com.gdw.work.**">
+		<level value="DEBUG" />
+	</logger>
+	<!-- jdbc logger -->	
+	<logger name="jdbc.sqlonly"> 
+	  	<level value="DEBUG"/> 
+		<appender-ref ref="console" />
+		<appender-ref ref="file_log" />
+	</logger>
+	
+	<!-- 3rdparty Loggers -->
+	<logger name="org.springframework.core">
+		<level value="INFO" />
+	</logger>
+	
+	<logger name="org.springframework.beans">
+		<level value="INFO" />
+	</logger>
+	
+	<logger name="org.springframework.context">
+		<level value="INFO" />
+	</logger>
+
+	<logger name="org.springframework.web">
+		<level value="INFO" />
+	</logger>
+
+	<!-- Root Logger -->
+	<root>
+		<priority value="DEBUG" />
+		<appender-ref ref="console" />
+		<appender-ref ref="file_log" />
+	</root>
+	
+</log4j:configuration>

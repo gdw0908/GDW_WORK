@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="LoginSql">
+	<resultMap id="adminInfoMap" type="java.util.HashMap" >
+       	<id javaType="java.lang.String" column="ADMIN_ID" property="adminId"/>
+       	<result javaType="java.lang.String" column="ADMIN_PASS" property="adminPass"/>
+        <result javaType="java.lang.String" column="ADMIN_NAME" property="adminName"/>
+        <result javaType="java.lang.String" column="ADMIN_GRADE_FLAG" property="adminGradeFlag"/>
+        <result javaType="java.lang.String" column="REG_USERID" property="regUserid"/>
+        <result javaType="java.lang.String" column="REG_DTTIME" property="regDttime"/>
+        <result javaType="java.lang.String" column="MOD_USERID" property="modUserid"/>
+        <result javaType="java.lang.String" column="MOD_DTTIME" property="modDttime"/>
+        <result javaType="java.lang.String" column="ADMIN_USE_YN" property="adminUseYn"/>
+	</resultMap>
+	
+	 <select id="selectAdminChk" parameterType="java.util.HashMap" resultMap="adminInfoMap">
+		SELECT			
+			ADMIN_ID
+			,ADMIN_PASS
+			,ADMIN_NAME
+			,ADMIN_GRADE_FLAG
+			,REG_USERID
+			,REG_DTTIME
+			,MOD_USERID
+			,MOD_DTTIME
+			,ADMIN_USE_YN
+		FROM	GDW_ADMIN
+		WHERE	1=1	
+		AND	ADMIN_ID = #{adminId}
+		AND ADMIN_PASS = #{adminPw}
+		AND ADMIN_USE_YN = 'Y'
+	</select>          
+	
+	<select id="checkUsrLoginChk" parameterType="java.util.HashMap" resultType="com.gdw.cms.common.auth.UserInfoVO">
+		SELECT			
+			ADMIN_ID  AS 	username
+			,ADMIN_ID  AS 	adminId
+			,ADMIN_PASS AS 	password
+			,ADMIN_NAME AS  	adminName
+			,ADMIN_GRADE_FLAG AS 	adminGradeFlag
+			,REG_USERID	AS 	regUserid
+			,REG_DTTIME	AS		regDttime
+			,MOD_USERID	AS 	modUserid
+			,MOD_DTTIME	AS 	modDttime
+			,ADMIN_USE_YN	AS 	adminUseYn
+		FROM	GDW_ADMIN
+		WHERE	1=1	
+		AND	ADMIN_ID = #{adminId}
+		AND ADMIN_PASS = #{adminPw}
+		AND ADMIN_USE_YN = 'Y'
+	</select>
+	
+</mapper>

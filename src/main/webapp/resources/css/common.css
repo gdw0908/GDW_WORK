@@ -1,0 +1,16 @@
+@charset "utf-8";
+
+body {margin:0px;}
+img {border:0px;}
+.cmttab {padding-right:5px;}
+.cmttabcon {background:url(/resources/images/common/tabimg_top_02.gif) 0 repeat-x; font-family:Arial; font-size:13px; font-weight:bold; color:#2a779e; vertical-align:middle;}
+.cmttabcon a{font-family:Arial; font-size:13px; font-weight:bold; color:#2a779e; vertical-align:middle; text-decoration:none;}
+.cmttabcon a:hover{font-family:Arial; font-size:13px; font-weight:bold; color:#861d36; vertical-align:middle; text-decoration:none;}
+.cmtip {padding-right:10px; font-family:Arial; font-size:12px; color:#fff;}
+
+.left {margin:0px; background-color:#f7fafc;}
+.cmlall {width:1000px; height:800px; background:url(/resources/images/common/bgimg_left_01.jpg) 0 top no-repeat; vertical-align:top; padding-left:5px; padding-top:10px;}
+.cmltbl {width:155px;}
+.cmltd {height:27px; background:url(/resources/images/common/img_dotline.gif) 0 bottom repeat-x; font-family:돋움; font-size:12px; color:#000; vertical-align:middle; padding-left:5px;}
+.cmltd a{font-family:돋움; font-size:12px; color:#000; vertical-align:middle; text-decoration:none;}
+.cmltd a:hover{font-family:돋움; font-size:12px; color:#861d36; vertical-align:middle; text-decoration:none;}

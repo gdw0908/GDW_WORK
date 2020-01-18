@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="AdminSql">
+	<resultMap id="adminInfoMap" type="java.util.HashMap" >
+       	<id javaType="java.lang.String" column="ADMIN_ID" property="adminId"/>
+       	<result javaType="java.lang.String" column="ADMIN_PASS" property="adminPass"/>
+        <result javaType="java.lang.String" column="ADMIN_NAME" property="adminName"/>
+        <result javaType="java.lang.String" column="ADMIN_GRADE_FLAG" property="adminGradeFlag"/>
+        <result javaType="java.lang.String" column="REG_USERID" property="regUserid"/>
+        <result javaType="java.lang.String" column="REG_DTTIME" property="regDttime"/>
+        <result javaType="java.lang.String" column="MOD_USERID" property="modUserid"/>
+        <result javaType="java.lang.String" column="MOD_DTTIME" property="modDttime"/>
+        <result javaType="java.lang.String" column="ADMIN_USE_YN" property="adminUseYn"/>
+	</resultMap>
+	
+	 <select id="selectAdminList" parameterType="java.util.HashMap" resultMap="adminInfoMap">
+		SELECT			
+			ADMIN_ID
+			,ADMIN_PASS
+			,ADMIN_NAME
+			,ADMIN_GRADE_FLAG
+			,REG_USERID
+			,DATE_FORMAT(REG_DTTIME, '%Y-%m-%d') AS REG_DTTIME 
+			,MOD_USERID
+			,DATE_FORMAT(MOD_DTTIME, '%Y-%m-%d') AS MOD_DTTIME
+			,ADMIN_USE_YN
+		FROM	GDW_ADMIN
+		WHERE	1=1	
+		<if test="adminId != '' and adminId != null ">
+			AND 	ADMIN_ID = #{adminId}
+		</if>
+		<if test="adminNm != '' and adminNm != null ">
+			AND 	ADMIN_NAME = #{adminNm}
+		</if>
+		ORDER BY REG_DTTIME DESC, MOD_DTTIME DESC
+		<if test="(page != '' and page) != null and (row != '' and row != null) ">
+		LIMIT #{page}, #{row};
+		</if>
+	</select>    
+	
+	<select id="selectAdminInfo" parameterType="java.util.HashMap" resultMap="adminInfoMap">
+		SELECT			
+			ADMIN_ID
+			,ADMIN_PASS
+			,ADMIN_NAME
+			,ADMIN_GRADE_FLAG
+			,REG_USERID
+			,DATE_FORMAT(REG_DTTIME, '%Y-%m-%d') AS REG_DTTIME 
+			,MOD_USERID
+			,DATE_FORMAT(MOD_DTTIME, '%Y-%m-%d') AS MOD_DTTIME
+			,ADMIN_USE_YN
+		FROM	GDW_ADMIN
+		WHERE	ADMIN_ID = #{adminId}
+	</select>    
+	
+	<update id="registAdminInfo" parameterType="java.util.HashMap">
+	 	INSERT INTO GDW_ADMIN (ADMIN_ID, ADMIN_PASS, ADMIN_NAME, ADMIN_GRADE_FLAG, REG_USERID, REG_DTTIME,  ADMIN_USE_YN ) 
+	 	VALUES (#{adminId}, #{adminPass}, #{adminName}, #{adminGradeFlag}, #{regUserid}, sysdate(), #{adminUseYn})  
+		ON DUPLICATE KEY 
+		UPDATE 
+			ADMIN_ID=#{adminId}
+			,ADMIN_PASS=#{adminPass}
+			,ADMIN_NAME=#{adminName}
+			,ADMIN_GRADE_FLAG=#{adminGradeFlag}
+			,MOD_USERID=#{modUserid}
+			,MOD_DTTIME=sysdate()
+			,ADMIN_USE_YN=#{adminUseYn}
+	</update>
+	
+	<delete id="deleteAdminInfo" parameterType="java.util.HashMap">
+		DELETE  FROM	GDW_ADMIN 	WHERE		ADMIN_ID=#{adminId}
+	</delete>
+	
+</mapper>

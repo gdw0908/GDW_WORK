@@ -1,0 +1,132 @@
+/* global */
+body {font-family:Arial;}
+img {border:none;}
+a {text-decoration:none;font-size:12px;color:#000;}
+td{text-decoration:none;font-size:12px;color:#000;}
+
+.select {border:1px solid #cfd0d4; font-size:12px; color:#000;}
+
+.txtinput {border:1px solid #cfd0d4; color:#000; font-size:12px; padding:2px;}
+.txtarea {border:1px solid #cfd0d4; color:#000; font-size:12px; padding:2px;}
+
+.ta11c {height:28px; text-align:center; font-size:11px; color:#000;}
+.ta11l {height:28px; text-align:left; font-size:11px; color:#000; padding-left:7px;}
+.ta11r {height:28px; text-align:right; font-size:11px; color:#000; padding-right:7px;}
+
+.ta12c {height:28px; text-align:center; font-size:12px; color:#000;}
+.ta12l {height:28px; text-align:left; font-size:12px; color:#000; padding-left:7px;}
+.ta12r {height:28px; text-align:right; font-size:12px; color:#000; padding-right:7px;}
+
+.colline {height:1px; background-color:#e9e9e9;}
+.colline02 {height:1px; background-color:#C9C9C9;}
+.colh03 {height:1px; background-color:#f5f5f5;}
+
+/* -------------------------------------------------------------------------------------------------- */
+
+/* title */
+.ydpcmttl {width:100%; margin-bottom:1px;}
+.ydpcmttl .cmttl {height:35px; background:url(/resources/images/common/ico_ttl.gif) 0 no-repeat; font-size:14px; font-weight:bold; color:#d3212a; padding-left:10px;}
+.ydpcmttl .cmttlgra {height:5px; background:url(/resources/images/common/bg_ttlgra.gif) 0 repeat-x;}
+
+/* list */
+.listsort {width:98%; margin-top:20px;}
+.listsort .serresul {text-align:left; font-size:12px; color:#000;}
+.listsort .serresur {text-align:right; font-size:12px; color:#000;}
+
+.bbslistdiv {width:800px; height:500px; padding:0px 0px 100px 186px; margin:0px 0px 50px 0px;}
+.bbslist {width:98%; margin-top:5px;}
+.bbslist .listttl {height:28px; background:url(/resources/images/common/bg_listtop.gif) 0 repeat-x; font-size:12px; font-weight:bold; color:#1f63bf; text-align:center; border-bottom:2px solid #ddeaf9; border-top:2px solid #7cb9f6; border-right:1px solid #d8d8d8;}
+.bbslist .ttlgra {height:5px; background:url(/resources/images/common/bg_listgra.gif) 0 repeat-x;}
+.bbslist a { font-size:12px; color:#000;}
+.bbslist a:hover { font-size:12px; color:#CD4242;}
+
+.bbslist .listttl2 {height:54px; background:url(/resources/images/common/bg_listtop2.gif) 0 repeat-x; font-size:12px; font-weight:bold; color:#000; text-align:center; border-left:1px solid #fff; border-right:1px solid #d8d8d8;}
+.bbslist .listttl2t {height:27px; background:url(/resources/images/common/bg_listtop2t.gif) 0 repeat-x; font-size:12px; font-weight:bold; color:#000; text-align:center; border-left:1px solid #fff; border-right:1px solid #d8d8d8;}
+.bbslist .listttl2b {height:27px; background:url(/resources/images/common/bg_listtop2b.gif) 0 repeat-x; font-size:12px; font-weight:bold; color:#000; text-align:center; border-left:1px solid #fff; border-right:1px solid #d8d8d8;}
+
+.listsear {width:98%; height:50px; text-align:center; background-color:#F5F5F5; margin-top:10px; padding-top:15px;}
+.listsear table {margin:0 auto; vertical-align:middle;}
+.listsear td {padding-right:5px;}
+.rep_num {font-size:11px; color:#FF7300; font-weight:bold; padding-left:10px;}
+
+
+/* list02 */
+.bod {width:98%; margin-top:10px; font-size:12px; font-family:Arial; color:#000;}
+.bod .bodtd {font-size:12px; font-family:Arial; color:#000; padding:5px 7px; background-color:#F3F3F3; border-left:1px solid #fff; border-top:1px solid #fff; font-weight:bold;}
+.bod .bodtd_c {font-size:12px; font-family:Arial; color:#000; padding:5px 7px; background-color:#F3F3F3; border-left:1px solid #fff; border-top:1px solid #fff; text-align:center; font-weight:bold;}
+
+.bod a {font-size:12px; font-family:Arial; color:#000; text-decoration:none;}
+.bod a:hover {font-size:12px; font-family:Arial; color:#444; text-decoration:underline;}
+
+.bod .bodcontd {font-size:12px; font-family:Arial; color:#000; padding:5px 7px; background-color:#fff;}
+.bod .bodcon_l {font-size:12px; font-family:Arial; color:#000; padding:5px 7px; background-color:#fff; text-align:left;}
+.bod .bodcon_c {font-size:12px; font-family:Arial; color:#000; padding:5px 7px; background-color:#fff; text-align:center;}
+.bod .bodcon_r {font-size:12px; font-family:Arial; color:#000; padding:5px 7px; background-color:#fff; text-align:right;}
+.bod .bodcon_lm {font-size:12px; font-family:Arial; color:#000; padding:5px 7px; background-color:#fff; text-align:left; vertical-align:middle;}
+.bod .bodcon_cm {font-size:12px; font-family:Arial; color:#000; padding:5px 7px; background-color:#fff; text-align:left; vertical-align:middle;}
+
+
+/* paging */
+.pagingArea{width:100%; height:20px; padding:10px 0 0 0;}
+.page {width:98%; margin-top:10px;}
+.page .paging{clear:both; text-align:center; margin-top:12px; color:#999;}
+.page .paging img{vertical-align:middle;}
+.page .paging a{color:#000000; font:12px Tahoma, Arial, Helvetica, sans-serif; padding:0px 1px; line-height:2px;}
+.page .paging a:hover{text-decoration:none; color:#c81313;}
+.page .paging a.on{font-weight:bold; color:#c81313;}
+.page .paging a.on:hover{cursor:default;}
+.page .paging a.func{padding:0 1px;}
+
+
+.libtn {text-align:right; padding:0 10px 5px 0; line-height:0px; margin:0px;}
+
+
+/* °Ë»ö */
+.search {width:98%; height:50px; background:url(/resources/images/common/bg_search.gif) 0 no-repeat; text-align:center;}
+.search .btn {position:absolute; padding-left:190px; padding-top:8px;}
+.search .sercon {padding-top:14px;}
+.search .td {clear:both; text-align:left; padding-right:8px;}
+
+
+/* view */
+.bbsview {width:98%; margin-top:10px;}
+.bbsview .viewttl {height:28px; background:url(/resources/images/common/bg_listtop.gif) 0 repeat-x; font-size:12px; font-weight:bold; color:#000; text-align:left; padding-left:15px; border-left:1px solid #fff; border-right:1px solid #d8d8d8;}
+.bbsview .ttlgra {height:5px; background:url(/resources/images/common/bg_listgra.gif) 0 repeat-x;}
+
+.viewinfo {width:98%; margin-top:10px;}
+.viewinfo td {font-size:12px; color:#000; text-align:left; padding-left:10px;}
+.viewinfo a {font-size:12px; color:#000; text-align:left;}
+.viewinfo a:hover {font-size:12px; color:#CD4242; text-align:left;}
+.viewinfo .vline {width:1px; background-color:#C9C9C9;}
+
+.viewcon {width:98%; height:100px; border:1px solid #C9C9C9; font-size:12px; color:#000; vertical-align:top;}
+.viewcon .contd {font-size:12px; color:#000; padding:10px; vertical-align:top;}
+.viewcon .contd img{text-align:center;}
+
+.viewbtn {width:98%; margin:10px 0; text-align:center; }
+.viewbtn td {padding-right:5px; padding-bottom:15px;}
+
+
+/* write */
+.bbswrite {width:98%; height:500px;padding:0px 0px 100px 186px; margin:0px 0px 50px 0px;}
+.bbswrite table{clear:both; width:100%; font-size:12px; color:#000;}
+.bbswrite th{clear:both; height:27px; text-align:left; padding-left:10px; background-color:#F3F3F3; text-align:center; font-weight:bold; font-size:12px; color:#000444; border-left:1px solid #fff; border-top:1px solid #fff;}
+.bbswrite td{padding:3px 3px 3px 5px;}
+.bbswrite .lastline {clear:both; border-bottom:1px solid #E7A5A5;}
+
+div.bbsbox {width:610px;}
+div.bbsbox table {
+	margin-top:10px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+div.bbsbox table th{background-color:#ececec; font-weight:bold; text-align:left; font-size:12px; padding-left:5px; height:25px;}
+
+.minwoninfo010 {border-top:3px solid #c7dbf6; border-bottom:3px solid #ebf4ff;}
+
+.minwoninfo010 th {text-align:center; font-weight:bold; background-color:#eef5ff; color:#4c7ec1; height:20px; }
+
+/*input {border:1px solid #e2e2e2;}*/
+
+.bbsbox p {margin:0 0 20px 0;}
