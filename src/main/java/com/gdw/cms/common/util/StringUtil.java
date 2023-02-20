@@ -21,7 +21,6 @@ import java.util.regex.Pattern;
 
 import javax.servlet.http.HttpServletRequest;
 
-import com.mysql.jdbc.StringUtils;
 
 /**
  * @author borythewide 각종 String instance의 조작에 관련된 method를 모아놓은 클래스이다. 거의 모든
